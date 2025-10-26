@@ -1,0 +1,13 @@
+<html>
+<html long="en">
+<head>
+     <meta charset="UTF-8>
+	 <meta name="viewport" content="width, initial-scale=1.0">
+	 <meta http-equiv="x-UA-compatibie" content="ie=edge">
+	 <title>Ids and classes in Html</title>
+	 </head>
+	 <body>
+	   
+     	  	
+	 </body>
+</html>
