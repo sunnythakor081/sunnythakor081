@@ -1,0 +1,132 @@
+Create a professional UML Sequence Diagram for an enterprise cloud platform similar to Ciright.
+
+Actors:
+- Admin
+- Employee
+- Customer
+- Manager
+
+System Components:
+- Web UI (Frontend)
+- Authentication Service
+- CRM Module (Customer Management)
+- Work Module (Task & Workflow Management)
+- Contract Module
+- Project Module (E-Domains)
+- Reporting Module
+- Database (MySQL)
+
+Flow:
+1. User (Admin/Employee/Customer) logs into the system through Web UI
+2. Web UI sends login request to Authentication Service
+3. Authentication Service validates credentials from Database
+4. Authentication Service returns success/failure response
+5. After login, user accesses Dashboard
+
+6. Based on role:
+   - Admin manages users, teams, business types, and contracts
+   - Employee manages tasks and updates customer data
+   - Customer views domain and container data
+   - Manager views reports and analytics
+
+7. CRM Module handles customer and contact data and interacts with Database
+8. Work Module processes tasks and workflow and stores data in Database
+9. Contract Module manages agreements and contract data
+10. Domain Module manages domain records (domain name, IP, customer mapping)
+11. Reporting Module fetches data from all modules and generates analytics reports
+
+12. Final output is displayed on Web UI
+
+Requirements:
+- Use proper UML sequence diagram notation
+- Include lifelines for each actor and module
+- Show message flow with arrows (request/response)
+- Keep diagram clean, professional, and structured
+
+
+
+
+
+Create a professional Entity-Relationship (ER) Diagram for an enterprise cloud platform similar to Ciright.
+
+Entities (Tables):
+1. Employee
+   - emp_id (PK)
+   - name
+   - title
+   - status
+   - doj
+
+2. Team
+   - team_id (PK)
+   - team_name
+
+3. Team_Members (Mapping Table)
+   - team_member_id (PK)
+   - emp_id (FK)
+   - team_id (FK)
+
+4. Customer
+   - customer_id (PK)
+   - name
+
+5. Container
+   - container_id (PK)
+   - name
+
+6. Customer_Containers
+   - customer_container_id (PK)
+   - customer_id (FK)
+   - container_id (FK)
+   - active
+
+7. Business_Type
+   - type_id (PK)
+   - name
+
+8. Parent_Business_Type
+   - parent_business_type_id (PK)
+   - business_type (FK)
+   - parent_business_type (FK)
+   - active
+
+9. Contract_Type_Players
+   - default_player_type_id (PK)
+   - project_type (FK)
+   - business_type (FK)
+   - active
+
+10. Domains
+   - domain_id (PK)
+   - domain
+   - suffix
+   - sub_domain
+   - ip_address
+   - customer_id (FK)
+
+11. Audit_Logs
+   - audit_id (PK)
+   - action
+   - created_by
+   - created_date
+   
+12.tbl_tab_master
+   - tabName
+   -tablabel
+   -tblSphere(Fk)
+   -tblTabGroups(Fk)
+
+Relationships:
+- One Employee can belong to many Teams (Many-to-Many via Team_Members)
+- One Customer can have many Containers (Many-to-Many via Customer_Containers)
+- One Business Type can have a parent Business Type (Self Relationship)
+- One Customer can have multiple Domains (One-to-Many)
+- Contract_Type_Players is linked to Business_Type and Project_Type
+-tbl_tab_master is linked to tbl_sphere and tbl_tab_groups
+
+Requirements:
+- Show only entities not show attributes
+- Clearly define primary keys (PK) and foreign keys (FK)
+- Show relationships with correct cardinality (1:1, 1:N, M:N)
+- Use proper ER diagram notation (rectangles, diamonds, lines)
+- Keep diagram clean, structured, and professional
